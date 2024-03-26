@@ -1,0 +1,266 @@
+:root {
+    --border-color: #fff;
+  }
+
+  @font-face {
+    font-family: Merriweather;
+    src: url(fonts/Merriweather/Merriweather-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Original Surfer';                                             /* Kändes självklart att använda denna font med tanke på hemsidans miljö, fonten ger en härlig surfar känsla*/
+    src: url(fonts/OriginalSurfer/OriginalSurfer-Regular.ttf);
+  }
+
+  html {
+    font-size: 105%;
+  }
+  
+  body {
+    font: 300 1rem/1.375 Merriweather, Georgia, serif;              /* 1rem/1.375 = font-size/line-height*/  
+    color: #fff;                                                    /*Textfärgen*/
+    background: linear-gradient(#5fc6e6, #498ecf);                    /*Ju längre ner du scrollar på sidan, desto mörkare blir färgen, lite som att man är i havet och ju längre ner mot botten man sjunker/simmar desto mörkare blir det, därav färgvalet*/
+  }
+  
+  #container {                                                    /* # eftersom det är ett id och inte ett element*/
+    display: grid;
+    gap: 1.5rem;
+    margin: 1.5rem 3rem;
+    grid-template-columns: 80% 20%;                             
+  }
+  
+  h1, h2, h3 {
+  font-family: 'Original Surfer', Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  }
+
+  h1 {                                                                   
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  p {                                                               
+    font-size: 0.9rem; 
+    margin: 0 0 2rem 0;
+    line-height: 1.5rem;
+  }
+
+  a {
+    font-weight: 700;
+    color: rgb(11, 8, 235);                          
+  }
+
+
+    /* Headern */
+
+  header {
+  grid-column: 1/3;
+  text-align: center;
+  border-bottom: 1px double #fff;
+  }
+
+
+    /* Navigeringen */
+
+  nav {
+    grid-column: 1/3;
+    width: 100%;    
+    line-height: 5rem;
+    text-align: center;
+    border-bottom: 1px double #fff;                                     
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  nav ul li a {
+    padding: 0 4rem 0 2rem;
+    color: #000000;                         
+  }
+
+  nav a:hover, nav a:focus {                              
+  font-weight: bold;
+  color: #e0d0d0; 
+  letter-spacing: 0.15rem;
+  }
+
+
+    /* Main */
+    
+  main {
+  display: grid;
+  grid-column: 1/2;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; 
+  }
+
+  #products {                                       
+    grid-column: 1/3;
+  }
+  
+  img {
+    display: block;
+    margin: 2rem auto 2rem;
+    width: 100%;
+  }
+  
+  #products article {
+    float: right;
+    width: 40%; 
+  }
+  
+  #products article:nth-child(even) {
+    float: left;
+    padding-right: 0.4rem;
+  }
+
+
+  /* Table */
+
+  #classes {
+  grid-column: 1/3;
+  }
+
+  table {
+    width: 100%;
+    max-width: 50rem;
+    border-spacing: 5px 10px;
+    margin: 0 0 2.5rem 0;
+  }
+  
+  td {
+  font-size: 1rem;
+  padding: 0.2rem;
+  
+  }
+
+  tr:nth-of-type(odd) {
+  background-color: rgba(243, 232, 232, 0.25);
+}
+
+  /* Story */
+
+  #story {
+  grid-column: 1/3;
+  padding: 10px; 
+    
+  }
+
+  #story img {
+  width: 60%;
+  margin: 0 0 1.75rem 0;
+  }
+
+  /* Newsletter */
+  
+  #newsletter {                     
+  font-size: 0.75rem;
+  grid-column: 2/3;
+  padding-left: 2rem;
+  margin-top: 4rem;
+  }
+ 
+  form ul {
+  list-style-type: none;
+  padding-left: 0
+  }
+
+  form ul li {
+  padding-bottom: 0.4rem;
+  }
+
+  input:focus {
+    outline: none;
+    background-color: #e0d0d0;
+  }
+
+  input[type = "submit"] {
+    background-color: #e3ebf3;
+    color: #100202;
+    padding: 0.4rem 2rem;
+    margin-top: 0.5rem;
+    border: none;
+  }
+
+  input[type = "submit"] :focus{
+    background-color: #101213;
+  }
+
+   /* Footer */
+  
+  footer {
+    grid-column: 1/3;
+    text-align: center;
+    margin-top: 1.5rem;
+    border-top: 1px double #fff;
+    padding-top: 1.5rem;
+  }
+
+
+   /* Media Query */                        
+  
+ @media(max-width:1080px) {
+  #container {
+    display: grid;
+    margin: 2rem;
+    padding: 10px 10px;
+    /*grid-template-columns: 1fr;*/
+    
+  }
+
+
+   /* Header */
+
+  header {
+  grid-column: 1/2;
+  }
+
+   /* Nav */
+
+  nav {
+  grid-column: 1/2;
+  margin-bottom: 1.5rem;
+  }
+
+   /* Newsletter */
+  
+  #newsletter {
+  grid-column: 1/2;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  padding-left: 0;
+  }
+
+  form ul {
+    padding-left: 0;
+  }
+
+  form ul li {
+    display: inline;                        
+    font-size: 0.8rem;
+       
+  }
+  
+  input[type="submit"] {
+    margin: 2rem 0 0 1rem;
+    
+  } 
+
+   /* Footer */
+   
+  footer {
+    grid-column: 1/2;
+  
+  }
+
+
+ }
